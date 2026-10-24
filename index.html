@@ -239,7 +239,7 @@ main{position:relative;width:100%;overflow-x:hidden}
   font-family:var(--font-display);text-transform:uppercase;line-height:1.05;
   letter-spacing:-0.01em;color:var(--foreground);font-size:var(--t-h3);
 }
-@media (min-width:640px){.hero-roles{font-size:var(--t-h2)}}
+@media (min-width:640px){.hero-roles{font-size:var(--t-h2);letter-spacing:1px}}
 .hero-roles .rl{display:block;overflow:hidden}
 .hero-roles .rl-in{display:block;transform:translateY(110%);opacity:0}
 html.go .hero-roles .rl-in{
@@ -332,7 +332,7 @@ h2[data-splitlines]{font-family:var(--font-display);text-transform:uppercase}
 section{padding:var(--section) var(--gutter)}
 .sec-head{display:flex;flex-direction:column;gap:1.5rem}
 @media (min-width:640px){.sec-head{flex-direction:row;align-items:flex-end;justify-content:space-between}}
-.sec-head h2{margin-top:1.5rem}
+.sec-head h2{margin-top:1.5rem;letter-spacing:1px}
 .sec-count{font-size:var(--t-eyebrow);text-transform:uppercase;letter-spacing:0.22em;color:var(--muted)}
 @media (max-width:1200px){section#hero{padding:var(--gutter) var(--gutter)}}
 @media (max-width:768px){section{padding:6rem var(--gutter)}}
@@ -385,7 +385,7 @@ section{padding:var(--section) var(--gutter)}
 .v-link{display:block}
 
 /* Impact */
-.impact-head h2{line-height:1;font-size:var(--t-h2)}
+.impact-head h2{line-height:1;font-size:var(--t-h2);letter-spacing:1px}
 .stats{margin-top:4rem;display:grid;grid-template-columns:1fr;border-top:1px solid var(--line)}
 @media (min-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
 @media (min-width:1024px){.stats{grid-template-columns:repeat(4,1fr)}}
@@ -415,7 +415,7 @@ section{padding:var(--section) var(--gutter)}
 .bi::after{content:"";margin-inline:2.5rem;width:0.625rem;height:0.625rem;border-radius:9999px;background:var(--accent);flex-shrink:0}
 
 /* Voices */
-.voices-head h2{line-height:1;font-size:var(--t-h2)}
+.voices-head h2{line-height:1;font-size:var(--t-h2);letter-spacing:1px}
 .voices-grid{margin-top:4rem;display:grid;grid-template-columns:1fr;gap:3rem}
 @media (min-width:1024px){.voices-grid{grid-template-columns:repeat(12,1fr);gap:var(--gutter)}}
 .voice-list{position:relative}
@@ -858,11 +858,11 @@ section{padding:var(--section) var(--gutter)}
         <p class="eyebrow" data-reveal><span class="dot"></span>Services</p>
         <h2 data-splitlines data-reveal-lines>Ideas in. Products out.</h2>
         <p class="lead" data-reveal style="--dur:520ms">
-          Six ways to plug me in — from a one-week audit to end-to-end product design.
+          Six ways to plug me in from a one-week audit to end-to-end product design.
           Easy to use, functional, customised.
         </p>
         <p class="lead" data-reveal style="--d:90ms;--dur:520ms;margin-top:1rem">
-          One of these on your roadmap? Bring the hard problem — I'll bring the process.
+          One of these on your roadmap? Bring the hard problem, I'll bring the process.
         </p>
         <div class="cta-row" data-reveal style="--d:180ms;--dur:520ms;margin-top:2rem">
           <a class="cta cta--primary" href="https://calendly.com/anamoulrouf/30min" target="_blank" rel="noreferrer noopener">Book a 30-min call <span class="arr">&#8599;</span></a>
@@ -881,14 +881,14 @@ section{padding:var(--section) var(--gutter)}
           <span class="idx">02</span>
           <div>
             <h3>UI Design</h3>
-            <p>Brand-aligned interfaces with real hierarchy — typography, color and iconography that guide instead of decorate.</p>
+            <p>Brand-aligned interfaces with real hierarchy typography, color and iconography that guide instead of decorate.</p>
           </div>
         </li>
         <li data-reveal style="--d:180ms;--dur:560ms">
           <span class="idx">03</span>
           <div>
             <h3>Mobile App Design</h3>
-            <p>Native and cross-platform apps for iOS and Android — thumb-friendly navigation, accessibility and speed, tested with real users before launch.</p>
+            <p>Native and cross-platform apps for iOS and Android thumb-friendly navigation, accessibility and speed, tested with real users before launch.</p>
           </div>
         </li>
         <li data-reveal style="--d:270ms;--dur:560ms">
@@ -902,14 +902,14 @@ section{padding:var(--section) var(--gutter)}
           <span class="idx">05</span>
           <div>
             <h3>Product Strategy &amp; Consultation</h3>
-            <p>Where projects should start when the problem isn't shaped yet — goals, market and competitors mapped before a single pixel, ending in a roadmap you can act on.</p>
+            <p>Where projects should start when the problem isn't shaped yet goals, market and competitors mapped before a single pixel, ending in a roadmap you can act on.</p>
           </div>
         </li>
         <li data-reveal style="--d:450ms;--dur:560ms">
           <span class="idx">06</span>
           <div>
             <h3>Design Systems</h3>
-            <p>Tokens, reusable components and documentation that keep every screen consistent as you scale — and a handoff developers don't fight.</p>
+            <p>Tokens, reusable components and documentation that keep every screen consistent as you scale and a handoff developers don't fight.</p>
           </div>
         </li>
       </ul>
