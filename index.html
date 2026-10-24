@@ -484,6 +484,24 @@ section{padding:var(--section) var(--gutter)}
 .venture-card .liquid{aspect-ratio:1/1;width:100%;border-radius:0.125rem}
 .venture-card .liquid img{object-fit:contain;padding:2rem}
 
+/* ============ SERVICES ============ */
+.svc-lead{margin-top:2rem;max-width:46ch;font-size:var(--t-lead);line-height:var(--lh-lead);color:var(--muted)}
+.svc-list{margin-top:4rem}
+.svc-row{display:grid;grid-template-columns:auto 1fr;column-gap:1.25rem;align-items:baseline;border-top:1px solid var(--line);padding:1.75rem 0}
+.svc-row:last-child{border-bottom:1px solid var(--line)}
+.svc-idx{font-size:var(--t-eyebrow);font-weight:500;font-variant-numeric:tabular-nums;letter-spacing:0.18em;color:var(--accent)}
+.svc-name{font-family:var(--font-display);text-transform:uppercase;font-size:var(--t-h3);line-height:1.1;letter-spacing:-0.01em;color:var(--foreground);transition:color 340ms ease}
+.svc-row:hover .svc-name{color:var(--accent)}
+.svc-blurb{margin-top:0.5rem;max-width:52ch;color:var(--muted)}
+.svc-out{grid-column:2;margin-top:0.75rem;font-size:var(--t-eyebrow);font-weight:500;text-transform:uppercase;letter-spacing:0.18em;color:var(--accent)}
+@media (min-width:768px){
+  .svc-row{grid-template-columns:auto 1fr auto;column-gap:2rem;padding:2.25rem 0}
+  .svc-out{grid-column:auto;margin-top:0;text-align:right;max-width:12rem}
+}
+.svc-cta{margin-top:3.5rem;display:flex;flex-direction:column;flex-wrap:wrap;gap:1.5rem}
+.svc-cta > p{max-width:44ch;color:var(--muted)}
+@media (min-width:640px){.svc-cta{flex-direction:row;align-items:center;justify-content:space-between}}
+
 /* ============ CONTACT / FOOTER ============ */
 .site-footer{padding-top:var(--section);padding-inline:var(--gutter)}
 .site-footer h2{
@@ -853,66 +871,70 @@ section{padding:var(--section) var(--gutter)}
 
   <!-- ============ SERVICES ============ -->
   <section id="services">
-    <div class="story-grid">
-      <div class="story-copy">
+    <div class="sec-head">
+      <div>
         <p class="eyebrow" data-reveal><span class="dot"></span>Services</p>
-        <h2 data-splitlines data-reveal-lines>Ideas in. Products out.</h2>
-        <p class="lead" data-reveal style="--dur:520ms">
-          Six ways to plug me in — from a one-week audit to end-to-end product design.
-          Easy to use, functional, customised.
-        </p>
-        <p class="lead" data-reveal style="--d:90ms;--dur:520ms;margin-top:1rem">
-          One of these on your roadmap? Bring the hard problem — I'll bring the process.
-        </p>
-        <div class="cta-row" data-reveal style="--d:180ms;--dur:520ms;margin-top:2rem">
-          <a class="cta cta--primary" href="https://calendly.com/anamoulrouf/30min" target="_blank" rel="noreferrer noopener">Book a 30-min call <span class="arr">&#8599;</span></a>
-          <a class="cta cta--ghost" href="mailto:hello@anamoulrouf.com">hello@anamoulrouf.com <span class="arr">&#8599;</span></a>
-        </div>
+        <h2 data-splitlines data-reveal-lines style="max-width:14ch;line-height:0.95;font-size:var(--t-h2)">Ideas in. Products out.</h2>
+        <p class="svc-lead" data-reveal style="--dur:520ms">Six ways to plug me in from a one-week audit to end-to-end product design. Easy to use, functional, customised.</p>
       </div>
-      <ul class="principles">
-        <li data-reveal style="--dur:560ms">
-          <span class="idx">01</span>
-          <div>
-            <h3>UX Design</h3>
-            <p>Research, personas and journey maps, prototyped and usability-tested until the hard path feels obvious.</p>
-          </div>
-        </li>
-        <li data-reveal style="--d:90ms;--dur:560ms">
-          <span class="idx">02</span>
-          <div>
-            <h3>UI Design</h3>
-            <p>Brand-aligned interfaces with real hierarchy — typography, color and iconography that guide instead of decorate.</p>
-          </div>
-        </li>
-        <li data-reveal style="--d:180ms;--dur:560ms">
-          <span class="idx">03</span>
-          <div>
-            <h3>Mobile App Design</h3>
-            <p>Native and cross-platform apps for iOS and Android — thumb-friendly navigation, accessibility and speed, tested with real users before launch.</p>
-          </div>
-        </li>
-        <li data-reveal style="--d:270ms;--dur:560ms">
-          <span class="idx">04</span>
-          <div>
-            <h3>Web Design</h3>
-            <p>Web applications and marketing sites that load fast, adapt to every screen, and turn visits into sign-ups.</p>
-          </div>
-        </li>
-        <li data-reveal style="--d:360ms;--dur:560ms">
-          <span class="idx">05</span>
-          <div>
-            <h3>Product Strategy &amp; Consultation</h3>
-            <p>Where projects should start when the problem isn't shaped yet — goals, market and competitors mapped before a single pixel, ending in a roadmap you can act on.</p>
-          </div>
-        </li>
-        <li data-reveal style="--d:450ms;--dur:560ms">
-          <span class="idx">06</span>
-          <div>
-            <h3>Design Systems</h3>
-            <p>Tokens, reusable components and documentation that keep every screen consistent as you scale — and a handoff developers don't fight.</p>
-          </div>
-        </li>
-      </ul>
+      <p class="sec-count" data-reveal>06 / Capabilities</p>
+    </div>
+    <ul class="svc-list">
+      <li class="svc-row" data-reveal style="--dur:560ms">
+        <span class="svc-idx">01</span>
+        <div>
+          <h3 class="svc-name">Design Systems</h3>
+          <p class="svc-blurb">Tokens, reusable components and documentation that keep every screen consistent as you scale and a handoff developers don't fight.</p>
+        </div>
+        <p class="svc-out">Component Library</p>
+      </li>
+      <li class="svc-row" data-reveal style="--d:90ms;--dur:560ms">
+        <span class="svc-idx">02</span>
+        <div>
+          <h3 class="svc-name">UX Design</h3>
+          <p class="svc-blurb">Research, personas and journey maps, prototyped and usability-tested until the hard path feels obvious.</p>
+        </div>
+        <p class="svc-out">Research &#8594; Prototype</p>
+      </li>
+      <li class="svc-row" data-reveal style="--d:180ms;--dur:560ms">
+        <span class="svc-idx">03</span>
+        <div>
+          <h3 class="svc-name">UI Design</h3>
+          <p class="svc-blurb">Brand-aligned interfaces with real hierarchy typography, color and iconography that guide instead of decorate.</p>
+        </div>
+        <p class="svc-out">On-brand · Pixel-tight</p>
+      </li>
+      <li class="svc-row" data-reveal style="--d:270ms;--dur:560ms">
+        <span class="svc-idx">04</span>
+        <div>
+          <h3 class="svc-name">Mobile App Design</h3>
+          <p class="svc-blurb">Native and cross-platform apps for iOS and Android; thumb-friendly navigation, accessibility and speed, tested with real users before launch.</p>
+        </div>
+        <p class="svc-out">iOS &amp; Android</p>
+      </li>
+      <li class="svc-row" data-reveal style="--d:360ms;--dur:560ms">
+        <span class="svc-idx">05</span>
+        <div>
+          <h3 class="svc-name">Web Design</h3>
+          <p class="svc-blurb">Web applications and marketing sites that load fast, adapt to every screen, and turn visits into sign-ups.</p>
+        </div>
+        <p class="svc-out">Speed · Conversion</p>
+      </li>
+      <li class="svc-row" data-reveal style="--d:450ms;--dur:560ms">
+        <span class="svc-idx">06</span>
+        <div>
+          <h3 class="svc-name">Product Strategy &amp; Consultation</h3>
+          <p class="svc-blurb">Where projects should start when the problem isn't shaped yet goals, market and competitors mapped before a single pixel, ending in a roadmap you can act on.</p>
+        </div>
+        <p class="svc-out">Vision · Roadmap</p>
+      </li>
+    </ul>
+    <div class="svc-cta">
+      <p data-reveal style="--dur:520ms">One of these on your roadmap? Bring the hard problem, I'll bring the process.</p>
+      <div class="cta-row" data-reveal style="--d:90ms;--dur:520ms">
+        <a class="cta cta--primary" href="https://calendly.com/anamoulrouf/30min" target="_blank" rel="noreferrer noopener">Book a 30-min call <span class="arr">&#8599;</span></a>
+        <a class="cta cta--ghost" href="mailto:hello@anamoulrouf.com">hello@anamoulrouf.com <span class="arr">&#8599;</span></a>
+      </div>
     </div>
   </section>
 
@@ -924,24 +946,29 @@ section{padding:var(--section) var(--gutter)}
     </div>
     <div class="voices-grid">
       <ul class="voice-list" id="voiceList">
-<li><button class="voice-btn active" data-voice="0">
+        <li><button class="voice-btn active" data-voice="0">
           <span class="vi">01</span>
           <span class="vcol"><span class="vn">ASM Mobarak Hossain</span><span class="vr" style="display:block">Senior Developer and AI Specialist at IBM</span></span>
           <span class="vrail"></span>
         </button></li>
-<li><button class="voice-btn" data-voice="1">
+        <li><button class="voice-btn" data-voice="1">
           <span class="vi">02</span>
-          <span class="vcol"><span class="vn">Shahriar P. Shuvo</span><span class="vr" style="display:block">Founder and CEO, UpLayer</span></span>
-          <span class="vrail"></span>
-        </button></li>
-<li><button class="voice-btn" data-voice="2">
-          <span class="vi">03</span>
           <span class="vcol"><span class="vn">Shoaib Mahmud</span><span class="vr" style="display:block">UX Lead, Freightmate</span></span>
           <span class="vrail"></span>
         </button></li>
-<li><button class="voice-btn" data-voice="3">
-          <span class="vi">04</span>
+        <li><button class="voice-btn" data-voice="2">
+          <span class="vi">03</span>
           <span class="vcol"><span class="vn">Ahmed Firoz</span><span class="vr" style="display:block">Senior Product Designer, Goava</span></span>
+          <span class="vrail"></span>
+        </button></li>
+        <li><button class="voice-btn" data-voice="3">
+          <span class="vi">04</span>
+          <span class="vcol"><span class="vn">Shahriar P. Shuvo</span><span class="vr" style="display:block">Founder and CEO, UpLayer</span></span>
+          <span class="vrail"></span>
+        </button></li>
+        <li><button class="voice-btn" data-voice="4">
+          <span class="vi">05</span>
+          <span class="vcol"><span class="vn">M. Tauhiduzzaman</span><span class="vr" style="display:block">Principal SQA Engineer, Kaz Software</span></span>
           <span class="vrail"></span>
         </button></li>
       </ul>
@@ -1111,13 +1138,14 @@ function splitLines(el){
 const VOICES = [
   { quote: "Anamoul played an important role in building ShareTrip's product ecosystem, from customer-facing apps and websites to B2B platforms and internal tools. He's good at understanding user needs, solving complex problems, and working closely with developers to bring ideas to life. A solid product designer I'd recommend without hesitation.",
     name: "ASM Mobarak Hossain", role: "Senior Developer and AI Specialist at IBM", initials: "AM" },
-  { quote: "I've worked with Anamoul at ShareTrip, CES, and now UpLayer, and one thing that's always stood out is how he looks beyond the UI to understand the real problem and find ways to make the product better. He's great at connecting user needs with business goals and turning complex challenges into practical solutions. He's also someone you can openly share ideas with and work through challenges together. Having worked with him across three different teams, I'd happily work with him again. He's not just a talented designer but also a reliable teammate who genuinely cares about building better products.",
-    name: "Shahriar P. Shuvo", role: "Founder and CEO, UpLayer", initials: "SS" },
   { quote: "Working with Rouf bhai at Truck Lagbe was a great experience. He's a talented designer who always looks beyond the design itself and thinks about how we can make the product better. But what I appreciate most is the person he is. He's humble, kind, and someone you can always count on. We became good friends and often hung out after work. I'd happily work with him again and highly recommend him to any team.",
     name: "Shoaib Mahmud", role: "UX Lead, Freightmate", initials: "SM" },
   { quote: "I've had the pleasure of working with Anamoul on several projects, including the Banglalink website redesign and Berger Paints' Color of Happiness app. He's great at solving tricky UX problems and finding solutions that work for both users and the business. He's also easy to work with, communicates well, and brings a positive attitude to the team. I'd definitely love to work with him again!",
     name: "Ahmed Firoz", role: "Senior Product Designer, Goava", initials: "AF" },
-
+  { quote: "I've worked with Anamoul at ShareTrip, CES, and now UpLayer, and one thing that's always stood out is how he looks beyond the UI to understand the real problem and find ways to make the product better. He's great at connecting user needs with business goals and turning complex challenges into practical solutions. He's also someone you can openly share ideas with and work through challenges together. Having worked with him across three different teams, I'd happily work with him again. He's not just a talented designer but also a reliable teammate who genuinely cares about building better products.",
+    name: "Shahriar P. Shuvo", role: "Founder and CEO, UpLayer", initials: "SS" },
+  { quote: "I've worked with Anamoul at CES and on a few projects at Kaz Software, and I've always appreciated his approach to product design. From a QA perspective, it's great working with a designer who thinks through user flows, edge cases, and different scenarios instead of focusing only on how things look. He understands the importance of usability and works closely with developers to make sure the final product works as well as it looks. He's collaborative, open to feedback, and genuinely cares about product quality. I'd happily recommend him to any team looking for a thoughtful and reliable product designer.",
+    name: "M. Tauhiduzzaman", role: "Principal SQA Engineer, Kaz Software", initials: "MT" },
 ];
 const quoteEl = document.getElementById("voiceQuote");
 const byEl = document.getElementById("voiceBy");
@@ -1126,9 +1154,10 @@ const voiceImg = document.getElementById("voiceImg");
 const quoteBox = document.querySelector(".voice-quote");
 const VOICE_IMGS = [
   "img/sajib.png",
-  "img/shuvo.png",
   "img/shoaib.png",
-  "img/firoz.png"
+  "img/firoz.png",
+  "img/shuvo.png",
+  "img/tauhid.png",
 ];
 
 function renderVoice(i){
