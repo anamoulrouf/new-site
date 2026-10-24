@@ -484,24 +484,6 @@ section{padding:var(--section) var(--gutter)}
 .venture-card .liquid{aspect-ratio:1/1;width:100%;border-radius:0.125rem}
 .venture-card .liquid img{object-fit:contain;padding:2rem}
 
-/* ============ SERVICES ============ */
-.svc-lead{margin-top:2rem;max-width:46ch;font-size:var(--t-lead);line-height:var(--lh-lead);color:var(--muted)}
-.svc-list{margin-top:4rem}
-.svc-row{display:grid;grid-template-columns:auto 1fr;column-gap:1.25rem;align-items:baseline;border-top:1px solid var(--line);padding:1.75rem 0}
-.svc-row:last-child{border-bottom:1px solid var(--line)}
-.svc-idx{font-size:var(--t-eyebrow);font-weight:500;font-variant-numeric:tabular-nums;letter-spacing:0.18em;color:var(--accent)}
-.svc-name{font-family:var(--font-display);text-transform:uppercase;font-size:var(--t-h3);line-height:1.1;letter-spacing:-0.01em;color:var(--foreground);transition:color 340ms ease}
-.svc-row:hover .svc-name{color:var(--accent)}
-.svc-blurb{margin-top:0.5rem;max-width:52ch;color:var(--muted)}
-.svc-out{grid-column:2;margin-top:0.75rem;font-size:var(--t-eyebrow);font-weight:500;text-transform:uppercase;letter-spacing:0.18em;color:var(--accent)}
-@media (min-width:768px){
-  .svc-row{grid-template-columns:auto 1fr auto;column-gap:2rem;padding:2.25rem 0}
-  .svc-out{grid-column:auto;margin-top:0;text-align:right;max-width:12rem}
-}
-.svc-cta{margin-top:3.5rem;display:flex;flex-direction:column;flex-wrap:wrap;gap:1.5rem}
-.svc-cta > p{max-width:44ch;color:var(--muted)}
-@media (min-width:640px){.svc-cta{flex-direction:row;align-items:center;justify-content:space-between}}
-
 /* ============ CONTACT / FOOTER ============ */
 .site-footer{padding-top:var(--section);padding-inline:var(--gutter)}
 .site-footer h2{
@@ -871,70 +853,66 @@ section{padding:var(--section) var(--gutter)}
 
   <!-- ============ SERVICES ============ -->
   <section id="services">
-    <div class="sec-head">
-      <div>
+    <div class="story-grid">
+      <div class="story-copy">
         <p class="eyebrow" data-reveal><span class="dot"></span>Services</p>
-        <h2 data-splitlines data-reveal-lines style="max-width:14ch;line-height:0.95;font-size:var(--t-h2)">Ideas in. Products out.</h2>
-        <p class="svc-lead" data-reveal style="--dur:520ms">Six ways to plug me in from a one-week audit to end-to-end product design. Easy to use, functional, customised.</p>
+        <h2 data-splitlines data-reveal-lines>Ideas in. Products out.</h2>
+        <p class="lead" data-reveal style="--dur:520ms">
+          Six ways to plug me in — from a one-week audit to end-to-end product design.
+          Easy to use, functional, customised.
+        </p>
+        <p class="lead" data-reveal style="--d:90ms;--dur:520ms;margin-top:1rem">
+          One of these on your roadmap? Bring the hard problem — I'll bring the process.
+        </p>
+        <div class="cta-row" data-reveal style="--d:180ms;--dur:520ms;margin-top:2rem">
+          <a class="cta cta--primary" href="https://calendly.com/anamoulrouf/30min" target="_blank" rel="noreferrer noopener">Book a 30-min call <span class="arr">&#8599;</span></a>
+          <a class="cta cta--ghost" href="mailto:hello@anamoulrouf.com">hello@anamoulrouf.com <span class="arr">&#8599;</span></a>
+        </div>
       </div>
-      <p class="sec-count" data-reveal>06 / Capabilities</p>
-    </div>
-    <ul class="svc-list">
-<li class="svc-row" data-reveal style="--dur:560ms">
-        <span class="svc-idx">01</span>
-        <div>
-          <h3 class="svc-name">UX Design</h3>
-          <p class="svc-blurb">Research, personas and journey maps, prototyped and usability-tested until the hard path feels obvious.</p>
-        </div>
-        <p class="svc-out">Research &#8594; Prototype</p>
-      </li>
-<li class="svc-row" data-reveal style="--d:90ms;--dur:560ms">
-        <span class="svc-idx">02</span>
-        <div>
-          <h3 class="svc-name">UI Design</h3>
-          <p class="svc-blurb">Brand-aligned interfaces with real hierarchy typography, color and iconography that guide instead of decorate.</p>
-        </div>
-        <p class="svc-out">On-brand · Pixel-tight</p>
-      </li>
-<li class="svc-row" data-reveal style="--d:180ms;--dur:560ms">
-        <span class="svc-idx">03</span>
-        <div>
-          <h3 class="svc-name">Mobile App Design</h3>
-          <p class="svc-blurb">Native and cross-platform apps for iOS and Android thumb-friendly navigation, accessibility and speed, tested with real users before launch.</p>
-        </div>
-        <p class="svc-out">iOS &amp; Android</p>
-      </li>
-<li class="svc-row" data-reveal style="--d:270ms;--dur:560ms">
-        <span class="svc-idx">04</span>
-        <div>
-          <h3 class="svc-name">Web Design</h3>
-          <p class="svc-blurb">Web applications and marketing sites that load fast, adapt to every screen, and turn visits into sign-ups.</p>
-        </div>
-        <p class="svc-out">Speed · Conversion</p>
-      </li>
-<li class="svc-row" data-reveal style="--d:360ms;--dur:560ms">
-        <span class="svc-idx">05</span>
-        <div>
-          <h3 class="svc-name">Product Strategy &amp; Consultation</h3>
-          <p class="svc-blurb">Where projects should start when the problem isn't shaped yet — goals, market and competitors mapped before a single pixel, ending in a roadmap you can act on.</p>
-        </div>
-        <p class="svc-out">Vision · Roadmap</p>
-      </li>
-<li class="svc-row" data-reveal style="--dur:560ms">
-        <span class="svc-idx">06</span>
-        <div>
-          <h3 class="svc-name">Design Systems</h3>
-          <p class="svc-blurb">Tokens, reusable components and documentation that keep every screen consistent as you scale and a handoff developers don't fight.</p>
-        </div>
-        <p class="svc-out">Component Library</p>
-      </li>
-    </ul>
-    <div class="svc-cta">
-      <p data-reveal style="--dur:520ms">One of these on your roadmap? Bring the hard problem — I'll bring the process.</p>
-      <div class="cta-row" data-reveal style="--d:90ms;--dur:520ms">
-        <a class="cta cta--primary" href="https://calendly.com/anamoulrouf/30min" target="_blank" rel="noreferrer noopener">Book a 30-min call <span class="arr">&#8599;</span></a>
-        <a class="cta cta--ghost" href="mailto:hello@anamoulrouf.com">hello@anamoulrouf.com <span class="arr">&#8599;</span></a>
-      </div>
+      <ul class="principles">
+        <li data-reveal style="--dur:560ms">
+          <span class="idx">01</span>
+          <div>
+            <h3>UX Design</h3>
+            <p>Research, personas and journey maps, prototyped and usability-tested until the hard path feels obvious.</p>
+          </div>
+        </li>
+        <li data-reveal style="--d:90ms;--dur:560ms">
+          <span class="idx">02</span>
+          <div>
+            <h3>UI Design</h3>
+            <p>Brand-aligned interfaces with real hierarchy — typography, color and iconography that guide instead of decorate.</p>
+          </div>
+        </li>
+        <li data-reveal style="--d:180ms;--dur:560ms">
+          <span class="idx">03</span>
+          <div>
+            <h3>Mobile App Design</h3>
+            <p>Native and cross-platform apps for iOS and Android — thumb-friendly navigation, accessibility and speed, tested with real users before launch.</p>
+          </div>
+        </li>
+        <li data-reveal style="--d:270ms;--dur:560ms">
+          <span class="idx">04</span>
+          <div>
+            <h3>Web Design</h3>
+            <p>Web applications and marketing sites that load fast, adapt to every screen, and turn visits into sign-ups.</p>
+          </div>
+        </li>
+        <li data-reveal style="--d:360ms;--dur:560ms">
+          <span class="idx">05</span>
+          <div>
+            <h3>Product Strategy &amp; Consultation</h3>
+            <p>Where projects should start when the problem isn't shaped yet — goals, market and competitors mapped before a single pixel, ending in a roadmap you can act on.</p>
+          </div>
+        </li>
+        <li data-reveal style="--d:450ms;--dur:560ms">
+          <span class="idx">06</span>
+          <div>
+            <h3>Design Systems</h3>
+            <p>Tokens, reusable components and documentation that keep every screen consistent as you scale — and a handoff developers don't fight.</p>
+          </div>
+        </li>
+      </ul>
     </div>
   </section>
 
