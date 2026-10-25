@@ -162,6 +162,9 @@ main{position:relative;width:100%;overflow-x:hidden}
 .site-nav nav{
   pointer-events:auto;display:flex;align-items:center;justify-content:space-between;
   padding:1.5rem var(--gutter);
+  mask: linear-gradient(black, black, transparent);
+  backdrop-filter: blur(8px);
+  background: linear-gradient(45deg, #000000, #00000008);
 }
 .nav-logo{display:flex;align-items:center;gap:0.75rem}
 .nav-logo .mono{
@@ -343,7 +346,7 @@ section{padding:var(--section) var(--gutter)}
 .story-copy{position:relative}
 @media (min-width:1024px){.story-copy{grid-column:span 6}}
 .story-copy h2{max-width:16ch;line-height:0.95;font-size:var(--t-h2);margin-top:1.5rem; letter-spacing: 0.5px}
-@media (min-width:640px){.story-copy h2{font-size:var(--t-h1)}}
+@media (min-width:640px){.story-copy h2{font-size:var(--t-h1);line-height: 1}}
 .story-copy .lead{margin-top:2rem;max-width:46ch;font-size:var(--t-lead);line-height:var(--lh-lead);color:var(--muted)}
 .principles{position:relative}
 @media (min-width:1024px){.principles{grid-column:span 6;padding-top:0.5rem}}
@@ -448,8 +451,8 @@ section{padding:var(--section) var(--gutter)}
   transition-delay:var(--d,0ms);
 }
 .voice-photo{order:1;width:100%;max-width:16rem}
-@media (min-width:640px){.voice-photo{order:2;width:16rem}}
-.voice-photo .liquid{aspect-ratio:4/5;width:100%;border-radius:0.125rem}
+@media (min-width:640px){.voice-photo{order:2;width:16rem;height:24rem}}
+.voice-photo .liquid{aspect-ratio:4/5;width:100%;height:100%;border-radius:0.125rem}
 
 /* ============ LIQUID IMAGE ============ */
 .liquid{position:relative;overflow:hidden;background:var(--surface);width:100%}
@@ -482,12 +485,12 @@ section{padding:var(--section) var(--gutter)}
 
 /* Ventures card image */
 .venture-card .liquid{aspect-ratio:1/1;width:100%;border-radius:0.125rem}
-.venture-card .liquid img{object-fit:contain;padding:2rem}
+.venture-card .liquid img{object-fit:contain;padding:1rem}
 
 /* ============ CONTACT / FOOTER ============ */
 .site-footer{padding-top:var(--section);padding-inline:var(--gutter)}
 .site-footer h2{
-  margin-top:1.5rem;max-width:18ch;line-height:0.95;
+  margin-top:1.5rem;max-width:18ch;line-height:1;
   font-size:var(--t-h1);
 }
 @media (max-width:640px){
@@ -709,7 +712,7 @@ section{padding:var(--section) var(--gutter)}
     <div class="sec-head">
       <div>
         <p class="eyebrow" data-reveal><span class="dot"></span>Selected Works</p>
-        <h2 data-splitlines data-reveal-lines style="max-width:14ch;line-height:0.95;font-size:var(--t-h2)">The work that moved markets.</h2>
+        <h2 data-splitlines data-reveal-lines style="max-width:14ch;line-height:1;font-size:var(--t-h2)">The work that moved markets.</h2>
       </div>
       <p class="sec-count" data-reveal>04 / Companies</p>
     </div>
@@ -724,7 +727,7 @@ section{padding:var(--section) var(--gutter)}
                 <feDisplacementMap in="SourceGraphic" in2="noise" scale="1" id="liq-v1-d"></feDisplacementMap>
               </filter>
             </svg>
-            <img src="img/st-app.png" alt="ShareTrip travel app screens" style="filter:url(#liq-v1)" data-liquid-turb="liq-v1" data-liquid-disp="liq-v1-d">
+            <img src="img/st-app.jpg" alt="ShareTrip travel app screens" style="filter:url(#liq-v1)" data-liquid-turb="liq-v1" data-liquid-disp="liq-v1-d">
             <div class="veil"></div><div class="glow"></div><div class="vignette"></div>
           </figure>
           <div class="v-meta">
@@ -752,7 +755,7 @@ section{padding:var(--section) var(--gutter)}
                 <feDisplacementMap in="SourceGraphic" in2="noise" scale="1" id="liq-v2-d"></feDisplacementMap>
               </filter>
             </svg>
-            <img src="img/ces-01.png" alt="COSMOS TMS logistics platform" style="filter:url(#liq-v2)" data-liquid-turb="liq-v2" data-liquid-disp="liq-v2-d">
+            <img src="img/ces-01.jpg" alt="COSMOS TMS logistics platform" style="filter:url(#liq-v2)" data-liquid-turb="liq-v2" data-liquid-disp="liq-v2-d">
             <div class="veil"></div><div class="glow"></div><div class="vignette"></div>
           </figure>
           <div class="v-meta">
@@ -780,7 +783,7 @@ section{padding:var(--section) var(--gutter)}
                 <feDisplacementMap in="SourceGraphic" in2="noise" scale="1" id="liq-v3-d"></feDisplacementMap>
               </filter>
             </svg>
-            <img src="img/sick-01.png" alt="Sick.org patient app screens" style="filter:url(#liq-v3)" data-liquid-turb="liq-v3" data-liquid-disp="liq-v3-d">
+            <img src="img/sick-01.jpg" alt="Sick.org patient app screens" style="filter:url(#liq-v3)" data-liquid-turb="liq-v3" data-liquid-disp="liq-v3-d">
             <div class="veil"></div><div class="glow"></div><div class="vignette"></div>
           </figure>
           <div class="v-meta">
@@ -808,7 +811,7 @@ section{padding:var(--section) var(--gutter)}
                 <feDisplacementMap in="SourceGraphic" in2="noise" scale="1" id="liq-v4-d"></feDisplacementMap>
               </filter>
             </svg>
-            <img src="img/tl-kys.png" alt="Truck Lagbe KYS verification flow" style="filter:url(#liq-v4)" data-liquid-turb="liq-v4" data-liquid-disp="liq-v4-d">
+            <img src="img/tl-kys.jpg" alt="Truck Lagbe KYS verification flow" style="filter:url(#liq-v4)" data-liquid-turb="liq-v4" data-liquid-disp="liq-v4-d">
             <div class="veil"></div><div class="glow"></div><div class="vignette"></div>
           </figure>
           <div class="v-meta">
