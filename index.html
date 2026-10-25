@@ -223,6 +223,7 @@ main{position:relative;width:100%;overflow-x:hidden}
   position:relative;z-index:30;display:flex;flex-direction:column;gap:2rem;
   padding:7rem var(--gutter) 0;
 }
+
 @media (max-width:640px){
   .hero{min-height:144svh; text-align:center}
   .hero-status{justify-content:center}
@@ -230,6 +231,7 @@ main{position:relative;width:100%;overflow-x:hidden}
   .chip{font-size: .75rem;padding: 0.25rem .5rem}
   h2.hero-roles{font-size:2.25rem}
 }
+
 @media (min-width:640px){
   .hero-top{flex-direction:row;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;padding-top:5rem}
 }
@@ -539,6 +541,49 @@ section{padding:var(--section) var(--gutter)}
 .fb-legal{position:relative}
 @media (min-width:1024px){.fb-legal{grid-column:span 3;text-align:right}}
 .fb-legal p{font-size:var(--t-eyebrow);text-transform:uppercase;letter-spacing:0.18em;color:var(--muted)}
+
+/* ============ MOBILE UX PASS (≤640px) ============ */
+@media (max-width:640px){
+  /* loader removed — no ceremony on phones */
+  .preloader{display:none}
+  /* hero clock re-based: first screen lands <1.2s (!important is the only way to beat the inline --d/--dur) */
+  .hero-status{--d:0ms !important;--dur:480ms !important}
+  .hero-desc{--d:70ms !important;--dur:480ms !important}
+  .hero-ctas{--d:140ms !important;--dur:480ms !important}
+  .scroll-cue{--d:210ms !important;--dur:480ms !important}
+  .hero-roles .rl:nth-child(1) .rl-in{--d:120ms !important}
+  .hero-roles .rl:nth-child(2) .rl-in{--d:180ms !important}
+  .hero-roles .rl:nth-child(3) .rl-in{--d:240ms !important}
+  .hero-roles .rl:nth-child(4) .rl-in{--d:300ms !important}
+  .hero-name{font-size:8.75rem}
+  /* portrait top seam dissolves into the background */
+  .hero-portrait{-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 22%);mask-image:linear-gradient(to bottom,transparent 0,#000 22%)}
+  /* contact: center the constrained boxes, not just their text */
+  .site-footer h2,.site-footer .lead{margin-inline:auto}
+  /* brands: static ruled grid — every rule .brands-scoped (track also carries .marquee-track) */
+  .brands .brands-track{display:grid;grid-template-columns:repeat(4,1fr);width:auto;animation:none;border-top:1px solid var(--line)}
+  .brands .bi{display:grid;place-items:center;padding:0.95rem 0.6rem;border-bottom:1px solid var(--line)}
+  .brands .bi:nth-child(4n+2),.brands .bi:nth-child(4n+3),.brands .bi:nth-child(4n){border-left:1px solid var(--line)}
+  .brands .bi::after{display:none}
+  .brands .bi[aria-hidden="true"]{display:none}
+  .brands .bi img{height:1.5rem;width:auto;max-width:100%;object-fit:contain}
+  /* voices: in-place accordion */
+  .voice-panel{display:none}
+  .voice-btn{padding:1.4rem 0;touch-action:manipulation}
+  .voice-btn::after{content:"+";font-size:1.5rem;line-height:1;color:var(--muted);flex-shrink:0;align-self:center;transition:transform 340ms var(--ease-out),color 340ms ease}
+  .voice-btn.active::after{transform:rotate(45deg);color:var(--accent)}
+  .voice-detail{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows 420ms var(--ease-expo),opacity 380ms ease}
+  .voice-detail.open{grid-template-rows:1fr;opacity:1}
+  .voice-detail-in{overflow:hidden;min-height:0;visibility:hidden;transition:visibility 0s 420ms}
+  .voice-detail.open .voice-detail-in{visibility:visible;transition:none}
+  .voice-detail .voice-inner{display:block;padding:0.25rem 0 1.75rem}
+  .voice-detail .voice-photo{width:8rem;max-width:none;margin-top:1rem}
+  .voice-detail .voice-photo .liquid{aspect-ratio:4/5}
+  .voice-detail .voice-photo .ph span{font-size:2.5rem}
+  .voice-detail .voice-quote{margin-top:1rem}
+  .voice-detail .voice-quote p{max-width:none;font-size:var(--t-body);line-height:1.6;letter-spacing:0;font-weight:400}
+  .voice-detail .voice-quote footer{display:none}
+}
 
 /* ============ REDUCED MOTION ============ */
 @media (prefers-reduced-motion: reduce){
@@ -1027,13 +1072,15 @@ import Lenis from "lenis";
 
 const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const canHover = matchMedia("(hover: hover) and (min-width: 769px)").matches;
+const mqMobile = matchMedia("(max-width: 640px)");
+const isMobile = () => mqMobile.matches;
 
 /* ---------- Lenis smooth scroll ---------- */
 const lenis = new Lenis({ smoothWheel: true });
 window.lenis = lenis;
 function raf(t){ lenis.raf(t); requestAnimationFrame(raf); }
 requestAnimationFrame(raf);
-lenis.stop(); // locked during preloader
+if (!reduced && !isMobile()) lenis.stop(); // desktop only — mobile has no preloader and never locks scroll
 
 /* anchor interception */
 document.querySelectorAll("a[data-scroll]").forEach(a => {
@@ -1165,17 +1212,72 @@ function renderVoice(i){
   void quoteBox.offsetWidth; // reflow to replay
   quoteBox.classList.add("play");
 }
-document.querySelectorAll(".voice-btn").forEach(btn => {
-  const activate = () => {
-    if (btn.classList.contains("active")) return;
-    document.querySelectorAll(".voice-btn").forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-    renderVoice(parseInt(btn.dataset.voice, 10));
-  };
-  btn.addEventListener("click", activate);
-  btn.addEventListener("mouseenter", activate);
+const voiceBtns = [...document.querySelectorAll(".voice-btn")];
+function activateVoice(btn){
+  if (btn.classList.contains("active")) return;
+  voiceBtns.forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+  renderVoice(parseInt(btn.dataset.voice, 10));
+}
+/* mobile accordion: build an in-place detail block inside each li */
+function buildVoiceDetails(){
+  document.querySelectorAll("#voiceList > li").forEach((li, i) => {
+    if (li.querySelector(".voice-detail")) return;
+    const v = VOICES[i];
+    const d = document.createElement("div");
+    d.className = "voice-detail"; d.id = "voice-detail-" + i;
+    d.setAttribute("role", "region"); d.setAttribute("aria-label", v.name);
+    d.innerHTML = '<div class="voice-detail-in"><div class="voice-inner"><figure class="voice-photo"><div class="liquid"><div class="ph"><span>' + v.initials + '</span></div><img alt="" loading="lazy"><div class="veil"></div><div class="vignette"></div></div></figure><blockquote class="voice-quote"><p></p></blockquote></div></div>';
+    li.appendChild(d);
+    li.querySelectorAll(".voice-photo img").forEach(im => im.addEventListener("error", () => im.classList.add("img-missing")));
+  });
+}
+function fillVoiceDetail(li, i){
+  const v = VOICES[i];
+  const box = li.querySelector(".voice-quote p");
+  const img = li.querySelector(".voice-photo img");
+  li.querySelector(".ph span").textContent = v.initials;
+  img.src = VOICE_IMGS[i];
+  const words = ("“" + v.quote + "”").split(" ");
+  box.innerHTML = words.map((w, j) =>
+    `<span class="qw" style="--d:${Math.min(j, 30) * 12}ms">${w}</span>`
+  ).join(" ");
+  const q = li.querySelector(".voice-quote");
+  q.classList.remove("play"); void q.offsetWidth; q.classList.add("play");
+}
+function openVoice(btn, instant = false){
+  const li = btn.closest("li"), pan = li.querySelector(".voice-detail");
+  const wasOpen = pan.classList.contains("open") && btn.classList.contains("active");
+  voiceBtns.forEach(b => { b.classList.remove("active"); b.setAttribute("aria-expanded", "false"); });
+  document.querySelectorAll("#voiceList .voice-detail.open").forEach(p => p.classList.remove("open"));
+  if (wasOpen && !instant) return; // one open at a time; re-tap collapses
+  btn.classList.add("active"); btn.setAttribute("aria-expanded", "true");
+  if (instant) pan.classList.add("open"); else { void pan.offsetWidth; pan.classList.add("open"); }
+  fillVoiceDetail(li, parseInt(btn.dataset.voice, 10));
+  if (!instant && li.getBoundingClientRect().top < 0) lenis.scrollTo(li, { offset: -80 });
+}
+function destroyVoiceDetails(){
+  document.querySelectorAll("#voiceList .voice-detail").forEach(d => d.remove());
+  voiceBtns.forEach(b => b.classList.remove("active"));
+  document.querySelector(".voice-btn")?.classList.add("active");
+}
+voiceBtns.forEach(btn => {
+  btn.setAttribute("aria-expanded", "false");
+  btn.setAttribute("aria-controls", "voice-detail-" + btn.dataset.voice);
+  btn.addEventListener("click", () => { isMobile() ? openVoice(btn) : activateVoice(btn); });
+  if (canHover) btn.addEventListener("mouseenter", () => { if (!isMobile()) activateVoice(btn); });
 });
-renderVoice(0);
+function syncVoices(){
+  if (isMobile()){
+    buildVoiceDetails();
+    openVoice(voiceBtns[0], true); // row 01 open by default, no animation on load
+  } else {
+    destroyVoiceDetails();
+    renderVoice(0);
+  }
+}
+(mqMobile.addEventListener) ? mqMobile.addEventListener("change", syncVoices) : mqMobile.addListener(syncVoices);
+syncVoices();
 
 /* ---------- Mobile menu ---------- */
 const burger = document.getElementById("burger");
@@ -1204,7 +1306,6 @@ const preloader = document.getElementById("preloader");
 const plNum = document.getElementById("plNum");
 const plBrand = document.getElementById("plBrand");
 const plCount = document.getElementById("plCount");
-const REVEAL_DELAY = 2500;
 
 function startPage(){
   lenis.start();
@@ -1214,6 +1315,11 @@ function startPage(){
 }
 
 if (reduced){
+  preloader.remove();
+  document.documentElement.classList.add("go");
+  lenis.start();
+} else if (isMobile()){
+  /* mobile: no loader ceremony — fonts are self-hosted and preloaded; enter immediately */
   preloader.remove();
   document.documentElement.classList.add("go");
   lenis.start();
@@ -1252,6 +1358,10 @@ function initReveals(){
 }
 if (reduced){
   document.querySelectorAll("[data-reveal], [data-reveal-lines], .ln-in").forEach(el => el.classList.add("in-view"));
+} else if (isMobile()){
+  /* cap the font wait so mobile reveals never hang on a slow font-ready */
+  const fontsReady = (document.fonts && document.fonts.ready) ? document.fonts.ready : Promise.resolve();
+  Promise.race([fontsReady, new Promise(r => setTimeout(r, 600))]).then(initReveals);
 } else if (document.fonts && document.fonts.ready){
   document.fonts.ready.then(initReveals);
 } else {
