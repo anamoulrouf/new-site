@@ -924,28 +924,33 @@ section{padding:var(--section) var(--gutter)}
     </div>
     <div class="voices-grid">
       <ul class="voice-list" id="voiceList">
-<li><button class="voice-btn active" data-voice="0">
+        <li><button class="voice-btn active" data-voice="0">
           <span class="vi">01</span>
           <span class="vcol"><span class="vn">ASM Mobarak Hossain</span><span class="vr" style="display:block">Senior Developer and AI Specialist at IBM</span></span>
           <span class="vrail"></span>
         </button></li>
-<li><button class="voice-btn" data-voice="1">
+        <li><button class="voice-btn" data-voice="1">
           <span class="vi">02</span>
           <span class="vcol"><span class="vn">Shahriar P. Shuvo</span><span class="vr" style="display:block">Founder and CEO, UpLayer</span></span>
           <span class="vrail"></span>
         </button></li>
-<li><button class="voice-btn" data-voice="2">
+        <li><button class="voice-btn" data-voice="2">
           <span class="vi">03</span>
+          <span class="vcol"><span class="vn">Musharof Chowdhury</span><span class="vr" style="display:block">Founder &amp; CEO, Pimjo</span></span>
+          <span class="vrail"></span>
+        </button></li>
+        <li><button class="voice-btn" data-voice="3">
+          <span class="vi">04</span>
           <span class="vcol"><span class="vn">Shoaib Mahmud</span><span class="vr" style="display:block">UX Lead, Freightmate</span></span>
           <span class="vrail"></span>
         </button></li>
-<li><button class="voice-btn" data-voice="3">
-          <span class="vi">04</span>
+        <li><button class="voice-btn" data-voice="4">
+          <span class="vi">05</span>
           <span class="vcol"><span class="vn">Ahmed Firoz</span><span class="vr" style="display:block">Senior Product Designer, Goava</span></span>
           <span class="vrail"></span>
         </button></li>
-<li><button class="voice-btn" data-voice="4">
-          <span class="vi">05</span>
+        <li><button class="voice-btn" data-voice="5">
+          <span class="vi">06</span>
           <span class="vcol"><span class="vn">M. Tauhiduzzaman</span><span class="vr" style="display:block">Principal SQA Engineer, Kaz Software</span></span>
           <span class="vrail"></span>
         </button></li>
@@ -1118,6 +1123,8 @@ const VOICES = [
     name: "ASM Mobarak Hossain", role: "Senior Developer and AI Specialist at IBM", initials: "AM" },
   { quote: "I've worked with Anamoul at ShareTrip, CES, and now UpLayer, and one thing that's always stood out is how he looks beyond the UI to understand the real problem and find ways to make the product better. He's great at connecting user needs with business goals and turning complex challenges into practical solutions. He's also someone you can openly share ideas with and work through challenges together. Having worked with him across three different teams, I'd happily work with him again. He's not just a talented designer but also a reliable teammate who genuinely cares about building better products.",
     name: "Shahriar P. Shuvo", role: "Founder and CEO, UpLayer", initials: "SS" },
+  { quote: "Anamoul Rouf has a strong understanding of branding, business logic, and enterprise-level requirements. His experience gives him a valuable perspective on how design connects with business goals, technical feasibility, and user needs. While he sometimes spends more time exploring and refining concepts than expected, his ability to understand complex business requirements and think beyond the UI makes him a valuable designer to work with. He brings a thoughtful, business-oriented approach to design that goes beyond aesthetics.",
+    name: "Musharof Chowdhury", role: "Founder & CEO, Pimjo", initials: "MC" },
   { quote: "Working with Rouf bhai at Truck Lagbe was a great experience. He's a talented designer who always looks beyond the design itself and thinks about how we can make the product better. But what I appreciate most is the person he is. He's humble, kind, and someone you can always count on. We became good friends and often hung out after work. I'd happily work with him again and highly recommend him to any team.",
     name: "Shoaib Mahmud", role: "UX Lead, Freightmate", initials: "SM" },
   { quote: "I've had the pleasure of working with Anamoul on several projects, including the Banglalink website redesign and Berger Paints' Color of Happiness app. He's great at solving tricky UX problems and finding solutions that work for both users and the business. He's also easy to work with, communicates well, and brings a positive attitude to the team. I'd definitely love to work with him again!",
@@ -1134,6 +1141,7 @@ const quoteBox = document.querySelector(".voice-quote");
 const VOICE_IMGS = [
   "img/sajib.png",
   "img/shuvo.png",
+  "img/musharof.png",
   "img/shoaib.png",
   "img/firoz.png",
   "img/tauhid.png"
