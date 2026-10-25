@@ -3,20 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Anamoul Rouf — Product Designer · User Centric · Problem Solver</title>
+<title>Anamoul Rouf · Product Designer · User Centric · Problem Solver</title>
 <meta name="description" content="Anamoul Rouf is a product designer who turns complex product challenges into scalable, high-performing design systems. 8+ years across mobile apps, web platforms, and design systems. Open to roles and projects.">
 <meta name="theme-color" content="#08080a">
 <meta property="og:type" content="website">
-<!-- share tags point at github.io/new-site — if you attach anamoulrouf.com later, update og:url, og:image, twitter:image -->
+<!-- share tags point at github.io/new-site - if you attach anamoulrouf.com later, update og:url, og:image, twitter:image -->
 <meta property="og:url" content="https://anamoulrouf.github.io/new-site/">
 <meta property="og:site_name" content="Anamoul Rouf">
-<meta property="og:title" content="Anamoul Rouf — Product Designer · User Centric · Problem Solver">
+<meta property="og:title" content="Anamoul Rouf · Product Designer · User Centric · Problem Solver">
 <meta property="og:description" content="Product designer turning complex product challenges into scalable, high-performing design systems. 8+ years across mobile, web, and design systems.">
 <meta property="og:image" content="https://anamoulrouf.github.io/new-site/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Anamoul Rouf — Product Designer · User Centric · Problem Solver">
+<meta name="twitter:title" content="Anamoul Rouf · Product Designer · User Centric · Problem Solver">
 <meta name="twitter:description" content="Product designer turning complex product challenges into scalable, high-performing design systems.">
 <meta name="twitter:image" content="https://anamoulrouf.github.io/new-site/og.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%2308080a'/%3E%3Ctext x='16' y='21' font-family='Arial,sans-serif' font-size='13' font-weight='700' fill='%23ff3b1d' text-anchor='middle'%3EAR%3C/text%3E%3C/svg%3E">
@@ -225,7 +225,7 @@ main{position:relative;width:100%;overflow-x:hidden}
 }
 
 @media (max-width:640px){
-  .hero{min-height:144svh; text-align:center}
+  .hero{min-height:164svh; text-align:center}
   .hero-status{justify-content:center}
   .hero-ctas{align-items:center}
   .chip{font-size: .75rem;padding: 0.25rem .5rem}
@@ -544,7 +544,7 @@ section{padding:var(--section) var(--gutter)}
 
 /* ============ MOBILE UX PASS (≤640px) ============ */
 @media (max-width:640px){
-  /* loader removed — no ceremony on phones */
+  /* loader removed - no ceremony on phones */
   .preloader{display:none}
   /* hero clock re-based: first screen lands <1.2s (!important is the only way to beat the inline --d/--dur) */
   .hero-status{--d:0ms !important;--dur:480ms !important}
@@ -560,7 +560,7 @@ section{padding:var(--section) var(--gutter)}
   .hero-portrait{-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 22%);mask-image:linear-gradient(to bottom,transparent 0,#000 22%)}
   /* contact: center the constrained boxes, not just their text */
   .site-footer h2,.site-footer .lead{margin-inline:auto}
-  /* brands: static ruled grid — every rule .brands-scoped (track also carries .marquee-track) */
+  /* brands: static ruled grid - every rule .brands-scoped (track also carries .marquee-track) */
   .brands .brands-track{display:grid;grid-template-columns:repeat(4,1fr);width:auto;animation:none;border-top:1px solid var(--line)}
   .brands .bi{display:grid;place-items:center;padding:0.95rem 0.6rem;border-bottom:1px solid var(--line)}
   .brands .bi:nth-child(4n+2),.brands .bi:nth-child(4n+3),.brands .bi:nth-child(4n){border-left:1px solid var(--line)}
@@ -724,14 +724,14 @@ section{padding:var(--section) var(--gutter)}
           <span class="idx">01</span>
           <div>
             <h3>Research before pixels</h3>
-            <p>The best design decisions happen long before the first screen. I talk to the people who'll use the product — then design what they told me.</p>
+            <p>The best design decisions happen long before the first screen. I talk to the people who'll use the product, then design what they told me.</p>
           </div>
         </li>
         <li data-reveal style="--d:90ms;--dur:560ms">
           <span class="idx">02</span>
           <div>
             <h3>Systems, not screens</h3>
-            <p>A component used once is decoration. A design system compounds — fifty screens stay consistent and the fifty-first ships itself.</p>
+            <p>A component used once is decoration. A design system compounds, fifty screens stay consistent and the fifty-first ships itself.</p>
           </div>
         </li>
         <li data-reveal style="--d:180ms;--dur:560ms">
@@ -778,7 +778,7 @@ section{padding:var(--section) var(--gutter)}
           <div class="v-meta">
             <div>
               <h3>ShareTrip</h3>
-              <p class="blurb">Led the app's design from scratch — wizard-booking plus TripCoin gamification.</p>
+              <p class="blurb">Led the app's design from scratch, wizard-booking plus TripCoin gamification.</p>
             </div>
             <div class="v-side">
               <p class="yr">2019</p>
@@ -1080,7 +1080,7 @@ const lenis = new Lenis({ smoothWheel: true });
 window.lenis = lenis;
 function raf(t){ lenis.raf(t); requestAnimationFrame(raf); }
 requestAnimationFrame(raf);
-if (!reduced && !isMobile()) lenis.stop(); // desktop only — mobile has no preloader and never locks scroll
+if (!reduced && !isMobile()) lenis.stop(); // desktop only - mobile has no preloader and never locks scroll
 
 /* anchor interception */
 document.querySelectorAll("a[data-scroll]").forEach(a => {
@@ -1199,7 +1199,7 @@ const VOICE_IMGS = [
 
 function renderVoice(i){
   const v = VOICES[i];
-  byEl.textContent = `${v.name} — ${v.role}`;
+  byEl.textContent = `${v.name} · ${v.role}`;
   initialsEl.textContent = v.initials;
   voiceImg.style.display = "none";
   voiceImg.onload = () => { voiceImg.style.display = "block"; };
@@ -1319,7 +1319,7 @@ if (reduced){
   document.documentElement.classList.add("go");
   lenis.start();
 } else if (isMobile()){
-  /* mobile: no loader ceremony — fonts are self-hosted and preloaded; enter immediately */
+  /* mobile: no loader ceremony - fonts are self-hosted and preloaded; enter immediately */
   preloader.remove();
   document.documentElement.classList.add("go");
   lenis.start();
