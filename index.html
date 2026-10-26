@@ -124,6 +124,12 @@ main{position:relative;width:100%;overflow-x:hidden}
   transition:transform 340ms var(--ease-out),background 340ms ease,color 340ms ease,border-color 340ms ease;
 }
 .cta .arr{transition:transform 340ms var(--ease-out)}
+/* external-link icon (img/external-link.svg) as a mask — inherits color per context */
+.cta .arr,.email-link .arr{
+  width:0.85em;height:0.85em;display:inline-block;flex-shrink:0;background:currentColor;
+  -webkit-mask:url("img/external-link.svg") no-repeat center/contain;
+  mask:url("img/external-link.svg") no-repeat center/contain;
+}
 .cta--primary{background:var(--accent);color:#ffffff}
 .cta--primary:hover{background:var(--accent-2);transform:translateY(-2px)}
 .cta--primary:hover .arr{transform:translate(2px,-2px)}
@@ -665,8 +671,8 @@ section{padding:var(--section) var(--gutter)}
         and design systems.
       </p>
       <div class="hero-ctas cta-row" data-reveal style="--d:2170ms;--dur:520ms">
-        <a class="cta cta--primary" href="https://calendly.com/anamoulrouf/30min" target="_blank" rel="noreferrer noopener">Book a 30-min call <span class="arr">&#8599;</span></a>
-        <a class="cta cta--ghost" href="#works" data-scroll>Explore the Works &#8595;</a>
+        <a class="cta cta--primary" href="https://calendly.com/anamoulrouf/30min" target="_blank" rel="noreferrer noopener">Book a 30-min call <span class="arr"></span></a>
+        <a class="cta cta--ghost" href="#works" data-scroll>Explore the Works</a>
       </div>
     </div>
 
@@ -880,8 +886,8 @@ section{padding:var(--section) var(--gutter)}
     <div class="works-cta" data-reveal style="--dur:520ms">
       <p class="lead">That's the featured four. The full archive goes deeper, with more products and the thinking behind them.</p>
       <div class="cta-row" data-reveal style="--d:90ms;--dur:520ms;margin-top:1.75rem">
-        <a class="cta cta--primary" href="https://calendly.com/anamoulrouf/30min" target="_blank" rel="noreferrer noopener">Book a 30-min call <span class="arr">&#8599;</span></a>
-        <a class="cta cta--ghost" href="https://anamoulrouf.com/works/" target="_blank" rel="noreferrer noopener">See all works <span class="arr">&#8599;</span></a>
+        <a class="cta cta--primary" href="https://calendly.com/anamoulrouf/30min" target="_blank" rel="noreferrer noopener">Book a 30-min call <span class="arr"></span></a>
+        <a class="cta cta--ghost" href="https://anamoulrouf.com/works/" target="_blank" rel="noreferrer noopener">See all works <span class="arr"></span></a>
       </div>
     </div>
   </section>
@@ -922,8 +928,8 @@ section{padding:var(--section) var(--gutter)}
           One of these on your roadmap? Bring the hard problem, I'll bring the process.
         </p>
         <div class="cta-row" data-reveal style="--d:180ms;--dur:520ms;margin-top:2rem">
-          <a class="cta cta--primary" href="https://calendly.com/anamoulrouf/30min" target="_blank" rel="noreferrer noopener">Book a 30-min call <span class="arr">&#8599;</span></a>
-          <a class="cta cta--ghost" href="mailto:hello@anamoulrouf.com">hello@anamoulrouf.com <span class="arr">&#8599;</span></a>
+          <a class="cta cta--primary" href="https://calendly.com/anamoulrouf/30min" target="_blank" rel="noreferrer noopener">Book a 30-min call <span class="arr"></span></a>
+          <a class="cta cta--ghost" href="mailto:hello@anamoulrouf.com">hello@anamoulrouf.com <span class="arr"></span></a>
         </div>
       </div>
       <ul class="principles">
@@ -1045,8 +1051,8 @@ section{padding:var(--section) var(--gutter)}
       <h2 data-splitlines data-reveal-lines>Have something the world says can't be done?</h2>
       <p class="lead" data-reveal style="--dur:520ms">Skip the inbox! Grab half an hour and bring the hard problem.</p>
       <div class="cta-row" data-reveal style="--d:90ms;margin-top:2rem">
-        <a class="cta cta--primary" href="https://calendly.com/anamoulrouf/30min" target="_blank" rel="noreferrer noopener">Book a 30-min call <span class="arr">&#8599;</span></a>
-        <a class="cta cta--ghost" href="#works" data-scroll>Explore the Works &#8595;</a>
+        <a class="cta cta--primary" href="https://calendly.com/anamoulrouf/30min" target="_blank" rel="noreferrer noopener">Book a 30-min call <span class="arr"></span></a>
+        <a class="cta cta--ghost" href="https://anamoulrouf.com/works/" target="_blank" rel="noreferrer noopener">See all works <span class="arr"></span></a>
       </div>
     </div>
   </div>
@@ -1058,7 +1064,7 @@ section{padding:var(--section) var(--gutter)}
         <span class="chip"><span class="sonar-dot" aria-hidden="true"></span>Available for Projects</span>
       </div>
       <a class="email-link email-link--tertiary" href="mailto:hello@anamoulrouf.com" data-reveal style="--d:180ms;--dur:520ms">
-        <span>hello@anamoulrouf.com</span><span class="arr">&#8599;</span>
+        <span>hello@anamoulrouf.com</span><span class="arr"></span>
       </a>
     </div>
     <nav class="fb-social" aria-label="Social">
