@@ -119,7 +119,7 @@ main{position:relative;width:100%;overflow-x:hidden}
 }
 .cta{
   display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;
-  padding:0.9rem 1.6rem;border-radius:9999px;
+  padding:0.9rem 1.6rem;border-radius:0;
   font-size:var(--t-eyebrow);font-weight:500;text-transform:uppercase;letter-spacing:0.18em;
   transition:transform 340ms var(--ease-out),background 340ms ease,color 340ms ease,border-color 340ms ease;
 }
@@ -416,7 +416,7 @@ section{padding:var(--section) var(--gutter)}
 .brands{margin-top:4rem;overflow:hidden}
 .brands-track{animation:marquee 30s linear infinite}
 .bi{display:flex;align-items:center;flex-shrink:0}
-.bi img{height:2.5rem;width:auto;opacity:0.9}
+.bi img{height:3rem;width:auto;opacity:0.9}
 .bi::after{content:"";margin-inline:2.5rem;width:0.625rem;height:0.625rem;border-radius:9999px;background:var(--accent);flex-shrink:0}
 
 /* Voices */
@@ -488,6 +488,8 @@ section{padding:var(--section) var(--gutter)}
 /* Ventures card image */
 .venture-card .liquid{aspect-ratio:1/1;width:100%;border-radius:0.125rem}
 .venture-card .liquid img{object-fit:contain;padding:1rem}
+.works-cta{margin-top:4rem;border-top:1px solid var(--line);padding-top:2.5rem}
+.works-cta .lead{max-width:44ch}
 
 /* ============ CONTACT / FOOTER ============ */
 .site-footer{padding-top:var(--section);padding-inline:var(--gutter)}
@@ -561,9 +563,9 @@ section{padding:var(--section) var(--gutter)}
   /* contact: center the constrained boxes, not just their text */
   .site-footer h2,.site-footer .lead{margin-inline:auto}
   /* brands: static ruled grid - every rule .brands-scoped (track also carries .marquee-track) */
-  .brands .brands-track{display:grid;grid-template-columns:repeat(4,1fr);width:auto;animation:none;border-top:1px solid var(--line)}
+  .brands .brands-track{display:grid;grid-template-columns:repeat(3,1fr);width:auto;animation:none;border-top:1px solid var(--line)}
   .brands .bi{display:grid;place-items:center;padding:0.95rem 0.6rem;border-bottom:1px solid var(--line)}
-  .brands .bi:nth-child(4n+2),.brands .bi:nth-child(4n+3),.brands .bi:nth-child(4n){border-left:1px solid var(--line)}
+  .brands .bi:nth-child(3n+2),.brands .bi:nth-child(3n){border-left:1px solid var(--line)}
   .brands .bi::after{display:none}
   .brands .bi[aria-hidden="true"]{display:none}
   .brands .bi img{height:1.5rem;width:auto;max-width:100%;object-fit:contain}
@@ -875,6 +877,13 @@ section{padding:var(--section) var(--gutter)}
         </a>
       </li>
     </ul>
+    <div class="works-cta" data-reveal style="--dur:520ms">
+      <p class="lead">That's the featured four. The full archive goes deeper, with more products and the thinking behind them.</p>
+      <div class="cta-row" data-reveal style="--d:90ms;--dur:520ms;margin-top:1.75rem">
+        <a class="cta cta--primary" href="https://calendly.com/anamoulrouf/30min" target="_blank" rel="noreferrer noopener">Book a 30-min call <span class="arr">&#8599;</span></a>
+        <a class="cta cta--ghost" href="https://anamoulrouf.com/works/" target="_blank" rel="noreferrer noopener">See all works <span class="arr">&#8599;</span></a>
+      </div>
+    </div>
   </section>
 
   <!-- ============ IMPACT ============ -->
