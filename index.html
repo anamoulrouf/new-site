@@ -367,6 +367,12 @@ section{padding:var(--section) var(--gutter)}
 .principles h3{font-size:var(--t-h3);font-weight:600;line-height:var(--lh-h3);letter-spacing:-0.01em}
 .principles p{margin-top:0.75rem;max-width:44ch;color:var(--muted)}
 
+@media (max-width:640px){
+  .story-copy{text-align:center}
+  .story-copy .eyebrow{justify-content: center}
+  .principles li{grid-template-columns: none;text-align: center}
+}
+
 /* Ventures */
 .venture-grid{margin-top:4rem;display:grid;grid-template-columns:1fr;row-gap:4rem}
 @media (min-width:768px){
@@ -389,11 +395,16 @@ section{padding:var(--section) var(--gutter)}
 .v-side .yr{font-size:var(--t-eyebrow);text-transform:uppercase;letter-spacing:0.18em;color:var(--muted)}
 .v-side .out{margin-top:0.5rem;font-size:var(--t-eyebrow);font-weight:500;text-transform:uppercase;letter-spacing:0.18em;color:var(--accent)}
 .v-cat{margin-top:0.75rem;font-size:var(--t-eyebrow);text-transform:uppercase;letter-spacing:0.22em;color:var(--muted)}
+.v-link{display:block}
 @media (max-width:640px){
   .v-meta{flex-direction:column;gap:1rem}
   .v-side{flex-shrink:1;display:flex;flex-wrap:wrap;gap:0.5rem 1.5rem;align-items:baseline;text-align:left}
+  #works .sec-head{text-align:center}
+  #works .sec-head .eyebrow{justify-content: center}
+  .venture-grid{text-align:center}
+  .venture-grid .v-side{justify-content: center; text-align: center}
+  .venture-grid .v-cat{margin-top:1.5rem}
 }
-.v-link{display:block}
 
 /* Impact */
 .impact-head h2{line-height:1;font-size:var(--t-h2);letter-spacing:1px}
@@ -418,12 +429,19 @@ section{padding:var(--section) var(--gutter)}
 .stats > div:hover dd{color:var(--accent)}
 .stats dt{max-width:20ch;font-size:var(--t-body);text-transform:uppercase;letter-spacing:0.14em;color:var(--muted)}
 
+@media (max-width:640px){
+  #impact .impact-head{text-align:center}
+  #impact .impact-head .eyebrow{justify-content: center}
+  #impact .stats > div{align-items:center;text-align:center}
+}
+
 /* Brands marquee */
 .brands{margin-top:4rem;overflow:hidden}
 .brands-track{animation:marquee 30s linear infinite}
 .bi{display:flex;align-items:center;flex-shrink:0}
 .bi img{height:3rem;width:auto;opacity:0.9}
 .bi::after{content:"";margin-inline:2.5rem;width:0.625rem;height:0.625rem;border-radius:9999px;background:var(--accent);flex-shrink:0}
+
 
 /* Voices */
 .voices-head h2{line-height:1;font-size:var(--t-h2);letter-spacing:1px}
@@ -462,6 +480,15 @@ section{padding:var(--section) var(--gutter)}
 @media (min-width:640px){.voice-photo{order:2;width:16rem;height:24rem}}
 .voice-photo .liquid{aspect-ratio:4/5;width:100%;height:100%;border-radius:0.125rem}
 
+@media (max-width:640px){
+  #voices .voices-head{text-align:center}
+  #voices .voices-head .eyebrow{justify-content: center}
+  #voices .voice-inner{text-align:center}
+  #voices .voice-inner .voice-photo {width: 80%;margin: auto}
+}
+
+
+
 /* ============ LIQUID IMAGE ============ */
 .liquid{position:relative;overflow:hidden;background:var(--surface);width:100%}
 .liquid.bare{background:transparent}
@@ -494,8 +521,11 @@ section{padding:var(--section) var(--gutter)}
 /* Ventures card image */
 .venture-card .liquid{aspect-ratio:1/1;width:100%;border-radius:0.125rem}
 .venture-card .liquid img{object-fit:contain;padding:1rem}
-.works-cta{margin-top:4rem;border-top:1px solid var(--line);padding-top:2.5rem}
+.works-cta{margin-top:4rem;border-top:1px solid var(--line);padding-top:2.5rem;text-align:center}
 .works-cta .lead{max-width:44ch}
+@media (max-width:640px){
+  .works-cta, .cta-row{align-items: center}
+}
 
 /* ============ CONTACT / FOOTER ============ */
 .site-footer{padding-top:var(--section);padding-inline:var(--gutter)}
